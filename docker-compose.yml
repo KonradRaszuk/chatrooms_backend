@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: pass123
+      POSTGRES_USER: postgres
+      POSTGRES_DB: chatrooms
+
+  chatrooms-gateway:
+    build:
+      context: .
+      dockerfile: ./apps/chatrooms-gateway/Dockerfile
+      target: development
+    command: npm run start:debug -- chatrooms-gateway
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    depends_on:
+      - db
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+      - '9230:9230'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
