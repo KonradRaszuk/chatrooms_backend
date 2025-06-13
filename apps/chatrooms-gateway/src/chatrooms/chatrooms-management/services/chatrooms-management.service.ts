@@ -9,4 +9,8 @@ export class ChatroomsManagementService {
   async createChatroom(createChatroomInput: CreateChatroomInput) {
     return this.chatroomsService.createChatroom(createChatroomInput);
   }
+
+  async getChatrooms() {
+    return this.chatroomsService.getChatrooms();
+  }
 }

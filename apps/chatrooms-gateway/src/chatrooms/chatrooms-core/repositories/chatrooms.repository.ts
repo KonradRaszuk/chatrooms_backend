@@ -8,4 +8,6 @@ export abstract class ChatroomsRepository {
   abstract createChatroom(
     createChatroomInput: CreateChatroomInput,
   ): Promise<ChatroomModel>;
+
+  abstract getChatrooms(): Promise<ChatroomModel[]>;
 }

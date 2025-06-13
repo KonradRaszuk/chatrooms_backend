@@ -17,4 +17,8 @@ export class ChatroomsService {
   ): Promise<ChatroomModel> {
     return this.chatroomsRepository.createChatroom(createChatroomInput);
   }
+
+  async getChatrooms(): Promise<ChatroomModel[]> {
+    return this.chatroomsRepository.getChatrooms();
+  }
 }

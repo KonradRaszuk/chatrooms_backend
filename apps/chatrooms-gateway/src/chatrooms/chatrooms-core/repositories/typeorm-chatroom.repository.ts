@@ -15,6 +15,10 @@ export class TypeormChatroomsRepository implements ChatroomsRepository {
     private readonly chatroomsRepository: Repository<Chatroom>,
   ) {}
 
+  async getChatrooms(): Promise<ChatroomModel[]> {
+    return this.chatroomsRepository.find();
+  }
+
   async findChatroomById(id: string): Promise<Undefinable<ChatroomModel>> {
     const chatroom = await this.chatroomsRepository.findOne({ where: { id } });
 
