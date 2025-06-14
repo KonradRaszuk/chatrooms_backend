@@ -13,5 +13,7 @@ export const mapChatroomMessageModelToChatroomMessageDto = (
     id: chatroomMessage.id,
     nick: chatroomMessage.user.nick,
     text: chatroomMessage.text,
+    userId: chatroomMessage.user.id,
+    chatroomId: chatroomMessage.chatroom.id,
   };
 };
