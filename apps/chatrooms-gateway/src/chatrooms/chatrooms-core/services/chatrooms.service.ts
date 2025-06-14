@@ -3,6 +3,7 @@ import { ChatroomsRepository } from '../repositories/chatrooms.repository';
 import { ChatroomModel } from '../models/chatroom.model';
 import { Undefinable } from '@app/common/types/undefinable.type';
 import { CreateChatroomInput } from '../models/create-chatroom.input';
+import { UpdateChatroomInput } from '../models/update-chatroom.input';
 
 @Injectable()
 export class ChatroomsService {
@@ -24,5 +25,11 @@ export class ChatroomsService {
 
   async deleteChatroom(id: string): Promise<void> {
     return this.chatroomsRepository.deleteChatroom(id);
+  }
+
+  async updateChatroom(
+    updateChatroomInput: UpdateChatroomInput,
+  ): Promise<ChatroomModel> {
+    return this.chatroomsRepository.updateChatroom(updateChatroomInput);
   }
 }

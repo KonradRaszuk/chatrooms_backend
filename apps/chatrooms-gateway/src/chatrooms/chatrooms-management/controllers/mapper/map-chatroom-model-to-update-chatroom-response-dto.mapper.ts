@@ -1,10 +1,10 @@
 import { Undefinable } from '@app/common/types/undefinable.type';
 import { ChatroomModel } from '../../../chatrooms-core/models/chatroom.model';
-import { CreateChatroomResponseDto } from '../dtos/create-chatroom-response.dto';
+import { UpdateChatroomResponseDto } from '../dtos/update-chatroom-response.dto';
 
-export const mapChatroomModelToCreateChatroomResponseDto = (
+export const mapChatroomModelToUpdateChatroomResponseDto = (
   chatroom: ChatroomModel,
-): Undefinable<CreateChatroomResponseDto> => {
+): Undefinable<UpdateChatroomResponseDto> => {
   if (!chatroom) {
     return undefined;
   }
