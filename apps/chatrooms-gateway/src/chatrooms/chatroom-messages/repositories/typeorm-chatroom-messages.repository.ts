@@ -38,6 +38,7 @@ export class TypeormChatroomMessagesRepository
   ): Promise<ChatroomMessageModel[]> {
     const data = await this.chatroomMessagesRepository.find({
       where: { ...findChatroomMessagesQuery },
+      order: { createdAt: 'ASC' },
     });
 
     return data.map((chatroomMessage) =>
