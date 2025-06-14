@@ -15,7 +15,9 @@ import { ChatroomMessagesService } from '../../chatroom-messages/services/chatro
 import { CreateChatroomMessageDto } from './dtos/create-chatroom-message.dto';
 import { ChatroomMessageDto } from '../../chatroom-messages/controllers/dtos/chatroom-message.dto';
 
-@WebSocketGateway({ namespace: '/chatrooms'})
+@WebSocketGateway({ namespace: '/chatrooms' ,  cors: {
+  origin: '*',
+}})
 export class ChatroomGateway
   implements OnGatewayConnection, OnGatewayDisconnect, OnGatewayInit
 {
