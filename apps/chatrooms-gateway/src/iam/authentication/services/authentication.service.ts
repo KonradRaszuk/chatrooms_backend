@@ -77,6 +77,8 @@ export class AuthenticationService {
         this.authConfiguration.accessTokenTtl,
         {
           email: user.email,
+          nick: user.nick,
+          sub: user.id,
           tokenType: JwtTokenType.ACCESS,
         },
       ),
