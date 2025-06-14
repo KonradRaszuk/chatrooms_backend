@@ -21,4 +21,8 @@ export class ChatroomsService {
   async getChatrooms(): Promise<ChatroomModel[]> {
     return this.chatroomsRepository.getChatrooms();
   }
+
+  async deleteChatroom(id: string): Promise<void> {
+    return this.chatroomsRepository.deleteChatroom(id);
+  }
 }

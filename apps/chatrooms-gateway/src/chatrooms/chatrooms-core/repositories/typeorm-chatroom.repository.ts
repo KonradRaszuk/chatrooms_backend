@@ -14,6 +14,15 @@ export class TypeormChatroomsRepository implements ChatroomsRepository {
     @InjectRepository(Chatroom)
     private readonly chatroomsRepository: Repository<Chatroom>,
   ) {}
+  async deleteChatroom(id: string): Promise<void> {
+    const chatroom = await this.chatroomsRepository.findOne({ where: { id } });
+
+    if (!chatroom) {
+      return;
+    }
+
+    await this.chatroomsRepository.remove(chatroom);
+  }
 
   async getChatrooms(): Promise<ChatroomModel[]> {
     return this.chatroomsRepository.find();

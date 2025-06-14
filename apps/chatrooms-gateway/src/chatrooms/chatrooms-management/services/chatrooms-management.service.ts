@@ -13,4 +13,8 @@ export class ChatroomsManagementService {
   async getChatrooms() {
     return this.chatroomsService.getChatrooms();
   }
+
+  async deleteChatroom(id: string): Promise<void> {
+    return this.chatroomsService.deleteChatroom(id);
+  }
 }

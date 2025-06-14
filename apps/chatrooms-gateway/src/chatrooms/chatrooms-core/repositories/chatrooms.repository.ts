@@ -10,4 +10,6 @@ export abstract class ChatroomsRepository {
   ): Promise<ChatroomModel>;
 
   abstract getChatrooms(): Promise<ChatroomModel[]>;
+
+  abstract deleteChatroom(id: string): Promise<void>;
 }
