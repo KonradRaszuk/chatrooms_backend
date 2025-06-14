@@ -17,4 +17,6 @@ export abstract class ChatroomsRepository {
   abstract updateChatroom(
     updateChatroomInput: UpdateChatroomInput,
   ): Promise<ChatroomModel>;
+
+  abstract getChatroomById(id: string): Promise<ChatroomModel>;
 }

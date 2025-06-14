@@ -62,4 +62,10 @@ export class TypeormChatroomsRepository implements ChatroomsRepository {
 
     return mapChatroomEntityToChatroomModel(user);
   }
+
+  async getChatroomById(id: string): Promise<ChatroomModel> {
+    const chatroom = await this.chatroomsRepository.findOne({ where: { id } });
+
+    return mapChatroomEntityToChatroomModel(chatroom);
+  }
 }

@@ -56,4 +56,10 @@ export class ChatroomsManagementController {
     });
     return mapChatroomModelToUpdateChatroomResponseDto(response);
   }
+
+  @Get(':id')
+  async getChatroomById(@Param() { id }: IdParamDto): Promise<ChatRoomDto> {
+    const response = await this.chatroomsManagementService.getChatroomById(id);
+    return mapChatroomModelToChatroomDto(response);
+  }
 }

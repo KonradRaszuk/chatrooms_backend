@@ -32,4 +32,8 @@ export class ChatroomsService {
   ): Promise<ChatroomModel> {
     return this.chatroomsRepository.updateChatroom(updateChatroomInput);
   }
+
+  async getChatroomById(id: string): Promise<ChatroomModel> {
+    return this.chatroomsRepository.getChatroomById(id);
+  }
 }
