@@ -67,6 +67,8 @@ export class ChatroomGateway
       id: chatroomMessage.id,
       nick: chatroomMessage.user.nick,
       text: chatroomMessage.text,
+      userId: chatroomMessage.user.id,
+      chatroomId: chatroomMessage.chatroom.id,
     };
 
     this.server.to(dto.chatroomId).emit('newMessage', payload);
