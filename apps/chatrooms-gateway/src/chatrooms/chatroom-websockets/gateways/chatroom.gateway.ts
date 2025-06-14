@@ -25,7 +25,7 @@ export class ChatroomGateway
     private readonly chatroomMessagesService: ChatroomMessagesService,
   ) {}
   afterInit(server: Server) {
-    server.use(SocketAuthMiddleware());
+    // server.use(SocketAuthMiddleware());
   }
 
   handleDisconnect(client: any) {
